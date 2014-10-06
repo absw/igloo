@@ -50,7 +50,7 @@ IGLOO_CONTEXT_ATTRIBUTE_REGISTRATION(attributeName, attributeValue)
 static std::vector<std::string>& MetaLog() \
 { \
     static std::vector<std::string> ret; \
-    if(ret.size()==0) ret.push_back(CAT_("Feature: ",stepDescription)); \
+    if(ret.size()==0) ret.push_back(CAT_("Feature: " stepDescription)); \
     return ret; \
 }               
 
