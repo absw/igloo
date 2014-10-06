@@ -41,8 +41,22 @@ namespace igloo {
       bool only;
     };
 
+    //Changed for Bluefruit
+    //This ordering function is for the Specs map
+    //In conjuction with the appended __COUNTER__ it ensures that the tests
+    //flow in the order they are layed out.
+    struct ltstr
+    {
+        bool operator()(std::string s1, std::string s2) const
+        {
+            int i1 = std::stoi(s1.substr(2));
+            int i2 = std::stoi(s2.substr(2));
+            return i1 < i2;
+        }
+    };
+
     typedef std::pair<std::string, SpecInfo> NamedSpec;
-    typedef std::map<std::string, SpecInfo> Specs;
+    typedef std::map<std::string, SpecInfo,ltstr> Specs;
 
     public:
     //
@@ -86,6 +100,7 @@ namespace igloo {
         testListener.ContextRunStarting(c);
 
         typename Specs::const_iterator it;
+
         for (it = specs.begin(); it != specs.end(); it++)
         {
           const std::string& specName = (*it).first;

@@ -7,6 +7,9 @@
 #ifndef IGLOO_TESTLISTENER_H
 #define IGLOO_TESTLISTENER_H
 
+#include <string>
+#include <igloo/core/testresults.h>
+
 namespace igloo {
 
   struct ContextBase;

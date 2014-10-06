@@ -23,12 +23,12 @@ namespace igloo {
       virtual void SpecRunStarting(const ContextBase& , const std::string& ) {}
       virtual void SpecSucceeded(const ContextBase& , const std::string& )
       {
-        std::cout << ".";
+        std::cout << ".\n";
       }
 
       virtual void SpecFailed(const ContextBase& , const std::string& )
       {
-        std::cout << "F";
+        std::cout << "F\n";
       }
   };
 
